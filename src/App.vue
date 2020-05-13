@@ -1,32 +1,93 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view class="view" />
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+};
+</script>
+
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 1vw;
+  color: #ffffffcc;
+  background-image: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.view {
+  backdrop-filter: blur(15px) brightness(70%);
+  padding-top: 2.5%;
+}
+
+h4 {
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
   font-weight: bold;
-  color: #2c3e50;
+  margin-bottom: 2%;
+  font-size: 2vw;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+h5 {
+  font-size: 1.7vw;
+}
+
+p {
+  font-size: 1.3vw;
+}
+
+@media screen and (max-width: 1025px) {
+  h4 {
+    font-size: 3vw;
+  }
+
+  h5 {
+    font-size: 2.5vw;
+  }
+
+  p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  h4 {
+    font-size: 4vw;
+  }
+
+  h5 {
+    font-size: 3.5vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+}
+
+/* common decorations on any devices */
+a {
+  text-decoration: none;
+}
+
+.router, .link {
+  color: #ffffffcc;
+}
+
+.router:hover {
+  filter: brightness(80%);
+  color: #eae3e3c2;
+}
+
+ul {
+  list-style-type: none;
 }
 </style>
