@@ -11,7 +11,7 @@
         <p class="app-description">This application is built with Vue.js</p>
 
         <div class="link-field">
-          <a class="code link" href="https://github.com/takuma0531/my-portfolio"><span>code</span><i class="fas fa-code"></i></a>
+          <a class="code link" href="https://github.com/takuma0531/my-portfolio_revised"><span>code</span><i class="fas fa-code"></i></a>
         </div>
       </div>
 
