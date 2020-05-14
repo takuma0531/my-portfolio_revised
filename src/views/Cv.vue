@@ -1,6 +1,5 @@
 <template>
-    <div class="cv">
-    <TopBar />
+  <div class="cv">
 
     <h4>CV</h4>
     <div class="body">
@@ -55,13 +54,8 @@
 </template>
 
 <script>
-import TopBar from '../components/TopBar.vue';
-
 export default {
   name: 'Cv',
-  components: {
-    TopBar,
-  },
 };
 </script>
 
@@ -80,12 +74,19 @@ export default {
 
 @media screen and (max-width: 1025px) {
     .cv {
-      padding-bottom: 45%;
+      padding-bottom: 10%;
+    }
+
+    h4 {
+      font-size: 6vw;
     }
 
     .body > * {
-      margin: 0 auto;
-      width: 100%;
+      margin: 10px auto;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      background: rgba(241, 241, 241, 0.095);
+      width: 90%;
       border-right: black none 0px;
       text-align: center;
     }

@@ -6,29 +6,6 @@
         <img class="my-img" src="../assets/my-image.jpg" alt="my-image">
       </router-link>
     </div>
-
-    <div class="body">
-      <div class="cv">
-        <router-link class="router" to="/cv">
-          <i class="fas fa-file"></i>
-          <h4>CV</h4>
-        </router-link>
-      </div>
-
-      <div class="projects">
-        <router-link class="router" to="/projects">
-          <i class="fas fa-project-diagram"></i>
-          <h4>Projects</h4>
-        </router-link>
-      </div>
-
-      <div class="contact">
-        <router-link class="router" to="/contact">
-          <i class="fas fa-user"></i>
-          <h4>Contact</h4>
-        </router-link>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -60,34 +37,6 @@ export default {
   filter: brightness(80%);
 }
 
-.body {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(10px);
-  height: 20vw;
-  justify-content: center;
-  align-items: center;
-}
-
-.cv, .projects, .contact {
-  width: 33.3%;
-  text-align: center;
-  font-size: 2vw;
-}
-
-.router > h4 {
-  margin-top: 1.1vw;
-}
-
-/* icon */
-svg {
-  padding: 1.3vw;
-  background: white;
-  border: white solid 1px;
-  border-radius: 50%;
-  color: #000000c4;
-}
-
 @media screen and (max-width: 1025px) {
   .header {
     padding-top: 25vw;
@@ -106,7 +55,7 @@ svg {
 @media screen and (max-width: 414px) {
   .header {
     padding-top: 25vw;
-    padding-bottom: 95vw;
+    padding-bottom: 85vw;
   }
 
   .greeting {
@@ -115,6 +64,18 @@ svg {
 
   .my-img {
     height: 15vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    padding-bottom: 125vw;
+  }
+}
+
+@media (max-width: 375px) and (max-height: 700px) {
+  .header {
+    padding-bottom: 85vw;
   }
 }
 </style>

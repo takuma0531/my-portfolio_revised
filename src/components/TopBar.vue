@@ -32,11 +32,7 @@ export default {
 .top-bar {
   background-color: #000000c7;
   backdrop-filter: blur(10px);
-  margin: 0;
-  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
 }
 
 ul {
@@ -48,7 +44,7 @@ ul {
 ul > li {
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 .img-router {
@@ -57,25 +53,11 @@ ul > li {
 
 .my-img {
   border-radius: 50%;
-  height: 2.5vw;
+  height: 3vw;
   vertical-align: middle;
 }
 
 @media screen and (max-width: 1025px) {
-  ul {
-    height: 3.5vw;
-  }
-
-  ul > li {
-    font-size: 2.5vw;
-  }
-
-  .my-img {
-    height: 3.5vw;
-  }
-}
-
-@media screen and (max-width: 414px) {
   ul {
     height: 4.5vw;
   }
@@ -85,7 +67,23 @@ ul > li {
   }
 
   .my-img {
-    height: 4vw;
+    height: 4.5vw;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  ul {
+    height: 8vw;
+  }
+
+  ul > li {
+    font-size: 5vw;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .my-img {
+    height: 6.5vw;
   }
 }
 </style>
