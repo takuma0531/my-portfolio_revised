@@ -250,7 +250,7 @@ button {
   }
 
   button > svg {
-    font-size: 7vw;
+    font-size: 13vw;
     padding: 7px;
     background:#000000a1;
   }
@@ -259,14 +259,14 @@ button {
     position: fixed;
     left: 0;
     margin-top: 36vw;
-    margin-left: 3vw;
+    margin-left: 1vw;
   }
 
   .r-btn {
     position: fixed;
     right: 0;
     margin-top: 36vw;
-    margin-right: 3vw;
+    margin-right: 1vw;
   }
 }
 

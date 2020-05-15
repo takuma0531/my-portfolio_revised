@@ -61,10 +61,12 @@ export default {
 
   .greeting {
     margin-bottom: 15vw;
+    font-size: 6vw;
   }
 
   .my-img {
-    height: 15vw;
+    height: 25vw;
+    margin-left: 40%;
   }
 }
 

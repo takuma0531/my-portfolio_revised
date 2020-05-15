@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-on:click="clickAnywhere">
     <TopBar />
     <router-view class="view" />
     <UnderBar />
@@ -15,6 +15,17 @@ export default {
   components: {
     TopBar,
     UnderBar,
+  },
+  methods: {
+    clickAnywhere() {
+      if (this.$store.state.display) {
+        console.log(this.$store.state.display);
+        this.$store.commit('unrenderMenu');
+        document.querySelector('.menu').style.display = 'none';
+        document.querySelector('.hum').style.display = 'block';
+        document.querySelector('.x').style.display = 'none';
+      }
+    },
   },
 };
 </script>
@@ -90,16 +101,20 @@ p {
     width: 99%;
   }
 
+  .view {
+    padding-top: 10%;
+  }
+
   h3, h4 {
     font-size: 4vw;
   }
 
   h5 {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
 
   p {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 }
 

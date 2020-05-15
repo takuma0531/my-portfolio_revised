@@ -23,18 +23,18 @@ export default {
   name: 'TopBar',
   data() {
     return {
-      display: 'none',
     };
   },
   methods: {
     clickBarIcon() {
-      if (this.display === 'none') {
-        this.display = 'block';
+      if (!this.$store.state.display) {
+        this.$store.commit('renderMenu');
         document.querySelector('.menu').style.display = 'block';
         document.querySelector('.hum').style.display = 'none';
         document.querySelector('.x').style.display = 'block';
+        window.event.stopPropagation();
       } else {
-        this.display = 'none';
+        this.$store.commit('unrenderMenu');
         document.querySelector('.menu').style.display = 'none';
         document.querySelector('.hum').style.display = 'block';
         document.querySelector('.x').style.display = 'none';
@@ -94,20 +94,20 @@ export default {
 
 @media screen and (max-width: 414px) {
   .top-bar {
-    height: 8vw;
+    height: 15vw;
   }
 
   .menu {
     display: none;
-    margin-top: 8vw;
+    margin-top: 15vw;
     position: absolute;
     z-index: 1;
     width: 99.2%;
   }
 
   .menu > .router {
-    font-size: 5vw;
-    padding: 2px 10px;
+    font-size: 6vw;
+    padding: 8px 10px;
     display: block;
     background: #000000c7;
   }
@@ -118,17 +118,17 @@ export default {
 
   .img-field {
     left: 1%;
-    top: 15%;
+    top: 5%;
   }
 
   .my-img {
-    height: 6.5vw;
+    height: 14vw;
   }
 
   .bar-icon {
     display: inline-block;
     position: absolute;
-    right: 1.5%;
+    right: 3%;
     top: 15%;
   }
 
@@ -137,7 +137,7 @@ export default {
   }
 
   svg {
-    font-size: 6.5vw;
+    font-size: 11vw;
   }
 }
 </style>
