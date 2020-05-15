@@ -19,7 +19,7 @@ export default {
 .header {
   backdrop-filter: blur(10px) brightness(70%);
   padding-top: 10vw;
-  padding-bottom: 10vw;
+  padding-bottom: 9vw;
 }
 
 .greeting {
@@ -37,13 +37,14 @@ export default {
   filter: brightness(80%);
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
   .header {
-    padding-top: 25vw;
-    padding-bottom: 57vw;
+    padding-top: 10vw;
+    padding-bottom: 70vw;
   }
 
   .greeting {
+    margin-top: 20vw;
     margin-bottom: 10vw;
   }
 
@@ -55,7 +56,7 @@ export default {
 @media screen and (max-width: 414px) {
   .header {
     padding-top: 25vw;
-    padding-bottom: 85vw;
+    padding-bottom: 95vw;
   }
 
   .greeting {
@@ -69,13 +70,13 @@ export default {
 
 @media screen and (max-width: 375px) {
   .header {
-    padding-bottom: 125vw;
+    padding-bottom: 130vw;
   }
 }
 
 @media (max-width: 375px) and (max-height: 700px) {
   .header {
-    padding-bottom: 85vw;
+    padding-bottom: 90vw;
   }
 }
 </style>

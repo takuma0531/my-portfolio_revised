@@ -36,10 +36,11 @@ body {
 
 .view {
   backdrop-filter: blur(15px) brightness(70%);
+  -webkit-backdrop-filter: blur(15px) brightness(70%);
   padding-top: 2.5%;
 }
 
-h4 {
+h3, h4 {
   text-align: center;
   font-weight: bold;
   margin-bottom: 2%;
@@ -54,9 +55,13 @@ p {
   font-size: 1.3vw;
 }
 
-@media screen and (max-width: 1025px) {
-  h4 {
+@media screen and (max-width: 1024px) {
+  h3 {
     font-size: 3vw;
+  }
+
+  h4 {
+    font-size: 4vw;
   }
 
   h5 {
@@ -66,10 +71,26 @@ p {
   p {
     font-size: 2vw;
   }
+
+  .under-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 414px) {
-  h4 {
+  #app {
+    position: relative;
+  }
+
+  .top-bar {
+    position: absolute;
+    z-index: 1;
+    width: 99%;
+  }
+
+  h3, h4 {
     font-size: 4vw;
   }
 

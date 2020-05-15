@@ -192,7 +192,7 @@ button {
 
 @media screen and (max-width: 1025px) {
   .projects {
-    padding-bottom: 33%;
+    padding-bottom: 50%;
   }
 
   .project {
@@ -207,7 +207,7 @@ button {
 
 @media screen and (max-width: 414px) {
   .projects {
-    padding-bottom: 33%;
+    padding-bottom: 65%;
   }
 
   h4 {
@@ -272,7 +272,7 @@ button {
 
 @media screen and (max-width: 375px) {
   .projects {
-    padding-bottom: 53%;
+    padding-bottom: 80%;
   }
 
   .body {
@@ -283,7 +283,7 @@ button {
 
 @media (max-width: 375px) and (max-height: 700px) {
   .projects {
-    padding-bottom: 29%;
+    padding-bottom: 55%;
   }
 
   .body {

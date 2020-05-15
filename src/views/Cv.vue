@@ -72,13 +72,9 @@ export default {
   border-right: #ffffff4d solid 1px;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
     .cv {
-      padding-bottom: 10%;
-    }
-
-    h4 {
-      font-size: 6vw;
+      padding-bottom: 23%;
     }
 
     .body > * {
@@ -89,6 +85,12 @@ export default {
       width: 90%;
       border-right: black none 0px;
       text-align: center;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    h4 {
+      font-size: 6vw;
     }
 }
 </style>
