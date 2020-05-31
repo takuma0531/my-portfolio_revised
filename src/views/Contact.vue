@@ -1,9 +1,11 @@
 <template>
   <div class="contact">
-    <h4>Contact</h4>
     <div class="body">
-      <div class="link-field">
-        <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+      <h4>Contact</h4>
+      <div class="content">
+        <div class="link-field">
+          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -17,7 +19,7 @@ export default {
 
 <style scoped>
 .contact {
-  padding-bottom: 22vw;
+  padding-bottom: 49.6vh;
 }
 
 .link-field {
@@ -32,7 +34,7 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .contact {
-    padding-bottom: 85vw;
+    padding-bottom: 61.2vh;
   }
 
   .link-field {
@@ -46,7 +48,7 @@ export default {
 
 @media screen and (max-width: 414px) {
   .contact {
-    padding-bottom: 125vw;
+    padding-bottom: 68.2vh;
   }
 
   h4 {
@@ -60,13 +62,13 @@ export default {
 
 @media screen and (max-width: 375px) {
   .contact {
-    padding-bottom: 165vw;
+    padding-bottom: 73.8vh;
   }
 }
 
 @media (max-width: 375px) and (max-height: 700px) {
   .contact {
-    padding-bottom: 133vw;
+    padding-bottom: 68.2vh;
   }
 }
 </style>

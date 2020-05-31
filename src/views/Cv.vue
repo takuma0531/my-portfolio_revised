@@ -1,54 +1,54 @@
 <template>
   <div class="cv">
-
-    <h4>CV</h4>
     <div class="body">
+      <h4>CV</h4>
+      <div class="content">
 
-      <div class="personal-info">
-        <h5>Personal Information</h5>
-        <p class="each-info">Name: Takuma Masaki</p>
-        <p class="each-info">Address: Varna, Bulgaria</p>
-        <p class="each-info">Phone Number: +359 88 2370014</p>
-        <p class="each-info">Email: tb.masaki0531@gmail.com</p>
+        <div class="personal-info">
+          <h5>Personal Information</h5>
+          <p class="each-info">Name: Takuma Masaki</p>
+          <p class="each-info">Address: Varna, Bulgaria</p>
+          <p class="each-info">Phone Number: +359 88 2370014</p>
+          <p class="each-info">Email: tb.masaki0531@gmail.com</p>
+        </div>
+
+        <div class="objective">
+          <h5>Objective</h5>
+          <p class="each-info">
+            Seeking an internship as a software engineer in EU to acquire practical experience
+          </p>
+        </div>
+
+        <div class="education">
+          <h5>Education</h5>
+          <ul>
+            <li class="each-info">
+              <p>2016-2020 Kansaigaidai University in Osaka, Japan</p>
+              <p>B.A. in English Linguistics</p>
+            </li>
+            <li class="each-info">
+              <p>2020 - 2022 Varna University of Management in Varna, Bulgaria</p>
+              <p>B.A.(expected) in Computer Science</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-ex">
+          <h5>Work Experience</h5>
+          <p class="each-info">No experience related to Software Engineering</p>
+        </div>
+
+        <div class="skill">
+          <h5>Skill</h5>
+          <p class="each-info">
+            HTML, CSS,
+            JavaScript, Vue.js,
+            Python, Flask,
+            C#, .NET Core,
+            MYSQL, MYSQL Server
+          </p>
+        </div>
       </div>
-
-      <div class="objective">
-        <h5>Objective</h5>
-        <p class="each-info">
-          Seeking an internship as a software engineer in EU to acquire practical experience
-        </p>
-      </div>
-
-      <div class="education">
-        <h5>Education</h5>
-        <ul>
-          <li class="each-info">
-            <p>2016-2020 Kansaigaidai University in Osaka, Japan</p>
-            <p>B.A. in English Linguistics</p>
-          </li>
-          <li class="each-info">
-            <p>2020 - 2022 Varna University of Management in Varna, Bulgaria</p>
-            <p>B.A.(expected) in Computer Science</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="work-ex">
-        <h5>Work Experience</h5>
-        <p class="each-info">No experience related to Software Engineering</p>
-      </div>
-
-      <div class="skill">
-        <h5>Skill</h5>
-        <p class="each-info">
-          HTML, CSS,
-          JavaScript, Vue.js,
-          Python, Flask,
-          C#, .NET Core,
-          MYSQL, MYSQL Server
-        </p>
-      </div>
-
     </div>
   </div>
 </template>
@@ -60,12 +60,13 @@ export default {
 </script>
 
 <style scoped>
-.body {
+.content {
+  padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
 }
 
-.body > * {
+.content > * {
   width: 28%;
   padding: 20px 10px;
   margin: 20px auto;
@@ -74,23 +75,31 @@ export default {
 
 @media screen and (max-width: 1024px) {
     .cv {
-      padding-bottom: 23%;
-    }
-
-    .body > * {
-      margin: 10px auto;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      background: rgba(241, 241, 241, 0.095);
-      width: 90%;
-      border-right: black none 0px;
-      text-align: center;
+      padding-bottom: 18.4vh;
     }
 }
 
 @media screen and (max-width: 414px) {
-    h4 {
-      font-size: 6vw;
-    }
+  .content {
+    display: block;
+    padding: 0;
+  }
+
+  .content > * {
+    width: 90%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-right: none;
+    border-bottom: #ffffff4d solid 1px;
+  }
+
+  .body {
+    padding: 30px 0;
+  }
+
+  h4 {
+    font-size: 6vw;
+  }
 }
 </style>

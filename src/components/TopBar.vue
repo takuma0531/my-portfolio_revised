@@ -1,19 +1,21 @@
 <template>
   <div class="top-bar">
-    <div class="menu">
-      <router-link class="router" to="/">Home</router-link>
-      <router-link class="router" to="/cv">CV</router-link>
-      <router-link class="router" to="/projects">Projects</router-link>
-      <router-link class="router" to="/contact">Contact</router-link>
-    </div>
-    <router-link class="router img-field" to="/">
-      <img class="my-img" src="../assets/my-image.jpg" alt="my-img">
-    </router-link>
-    <div class="bar-icon hum" v-on:click="clickBarIcon">
-      <i class="fas fa-bars"></i>
-    </div>
-    <div class="bar-icon x" v-on:click="clickBarIcon">
-      <i class="fas fa-times"></i>
+    <div class="body">
+      <div class="menu">
+        <router-link class="router" to="/">Home</router-link>
+        <router-link class="router" to="/cv">CV</router-link>
+        <router-link class="router" to="/projects">Projects</router-link>
+        <router-link class="router" to="/contact">Contact</router-link>
+      </div>
+      <router-link class="router img-field" to="/">
+        <img class="my-img" src="../assets/my-image.jpg" alt="my-img">
+      </router-link>
+      <div class="bar-icon hum" v-on:click="clickBarIcon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="bar-icon x" v-on:click="clickBarIcon">
+        <i class="fas fa-times"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -49,29 +51,31 @@ export default {
   background-color: #000000c7;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  padding: 0.5%;
   margin: 0;
 }
 
-
-.top-bar > * {
-  font-size: 2vw;
+.body {
+  margin: auto;
+  display: flex;
+  position: relative;
+  padding: 2vh 0;
 }
 
 .menu > .router {
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 2vw;
 }
 
 .img-field {
   position: absolute;
-  right: 1%;
+  right: 0;
+  bottom: 0.5vh;
 }
 
 .my-img {
   border-radius: 50%;
-  height: 3vw;
+  height: 5.5vh;
 }
 
 .bar-icon {
@@ -79,16 +83,17 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
-  .top-bar {
-    height: 4.5vw;
+  .body {
+    padding: 2vh 0;
   }
 
   .menu > .router {
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
 
-  .my-img {
-    height: 4.5vw;
+  .img-field {
+    right: 1vw;
+    bottom: 1vh;
   }
 }
 
@@ -99,10 +104,10 @@ export default {
 
   .menu {
     display: none;
-    margin-top: 15vw;
+    margin-top: 6.4vh;
     position: absolute;
     z-index: 1;
-    width: 99.2%;
+    width: 100%;
   }
 
   .menu > .router {
@@ -138,6 +143,18 @@ export default {
 
   svg {
     font-size: 11vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .menu {
+    margin-top: 4.9vh;
+  }
+}
+
+@media (max-width: 375px) and (max-height: 700px) {
+  .menu {
+    margin-top: 6.4vh;
   }
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <div class="header">
-      <h4 class="greeting">Thank you for visiting my website!</h4>
-      <router-link to="/cv">
-        <img class="my-img" src="../assets/my-image.jpg" alt="my-image">
-      </router-link>
+    <div class="body">
+      <div class="header">
+        <h4 class="greeting">Thank you for visiting my website!</h4>
+        <router-link to="/cv">
+          <img class="my-img" src="../assets/my-image.jpg" alt="my-image">
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -18,8 +20,8 @@ export default {
 <style scoped>
 .header {
   backdrop-filter: blur(10px) brightness(70%);
-  padding-top: 10vw;
-  padding-bottom: 9vw;
+  padding-top: 16vh;
+  padding-bottom: 28vh;
 }
 
 .greeting {
@@ -39,8 +41,8 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .header {
-    padding-top: 10vw;
-    padding-bottom: 70vw;
+    padding-top: 6vh;
+    padding-bottom: 47vh;
   }
 
   .greeting {
@@ -55,8 +57,7 @@ export default {
 
 @media screen and (max-width: 414px) {
   .header {
-    padding-top: 25vw;
-    padding-bottom: 95vw;
+    padding-bottom: 50vh;
   }
 
   .greeting {
@@ -72,13 +73,13 @@ export default {
 
 @media screen and (max-width: 375px) {
   .header {
-    padding-bottom: 130vw;
+    padding-bottom: 57.7vh;
   }
 }
 
 @media (max-width: 375px) and (max-height: 700px) {
   .header {
-    padding-bottom: 90vw;
+    padding-bottom: 50vh;
   }
 }
 </style>

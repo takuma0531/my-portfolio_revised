@@ -19,7 +19,6 @@ export default {
   methods: {
     clickAnywhere() {
       if (this.$store.state.display) {
-        console.log(this.$store.state.display);
         this.$store.commit('unrenderMenu');
         document.querySelector('.menu').style.display = 'none';
         document.querySelector('.hum').style.display = 'block';
@@ -48,13 +47,25 @@ body {
 .view {
   backdrop-filter: blur(15px) brightness(70%);
   -webkit-backdrop-filter: blur(15px) brightness(70%);
-  padding-top: 2.5%;
+  padding-top: 1%;
 }
 
-h3, h4 {
+.body {
+  width: 1200px;
+  margin: auto;
+}
+
+h3 {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
+  font-size: 1.5vw;
+}
+
+h4 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1%;
   font-size: 2vw;
 }
 
@@ -64,6 +75,12 @@ h5 {
 
 p {
   font-size: 1.3vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .body {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -98,7 +115,7 @@ p {
   .top-bar {
     position: absolute;
     z-index: 1;
-    width: 99%;
+    width: 100%;
   }
 
   .view {
