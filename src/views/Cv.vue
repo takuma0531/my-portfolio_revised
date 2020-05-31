@@ -80,6 +80,10 @@ export default {
 }
 
 @media screen and (max-width: 414px) {
+  .body {
+    margin-top: 10vh;
+  }
+
   .content {
     display: block;
     padding: 0;
@@ -92,10 +96,6 @@ export default {
     margin: 10px auto;
     border-right: none;
     border-bottom: #ffffff4d solid 1px;
-  }
-
-  .body {
-    padding: 30px 0;
   }
 
   h4 {

@@ -4,7 +4,7 @@
       <h4>Contact</h4>
       <div class="content">
         <div class="link-field">
-          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn &#x0003E;</span></a>
         </div>
       </div>
     </div>
@@ -49,6 +49,10 @@ export default {
 @media screen and (max-width: 414px) {
   .contact {
     padding-bottom: 68.2vh;
+  }
+
+  .body {
+    margin-top: 10vh;
   }
 
   h4 {
