@@ -4,9 +4,9 @@
       <h4>Projects</h4>
       <div class="content">
 
-        <button class="l-btn" v-on:click="clickLeft">&#x0003C;</button>
+        <div class="button l-btn" v-on:click="clickLeft">&#x0003C;</div>
 
-        <button class="r-btn" v-on:click="clickRight">&#x0003E;</button>
+        <div class="button r-btn" v-on:click="clickRight">&#x0003E;</div>
 
         <div class="project">
           <img src="../assets/vuejs.jpg" alt="">
@@ -193,7 +193,7 @@ span {
   margin-right: 5px;
 }
 
-button {
+.button {
   display: none;
 }
 
@@ -266,7 +266,7 @@ button {
     font-size: 4vw;
   }
 
-  button {
+  .button {
     display: block;
     color: white;
     font-size: 5vw;

@@ -81,4 +81,10 @@ svg {
     padding: 2vw;
   }
 }
+
+@media screen and (max-width: 414px) {
+  svg {
+    font-size: 3.2vw;
+  }
+}
 </style>
