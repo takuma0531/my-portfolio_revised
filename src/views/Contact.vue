@@ -4,7 +4,7 @@
       <h4>Contact</h4>
       <div class="content">
         <div class="link-field">
-          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn &#x0003E;</span></a>
+          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
         </div>
       </div>
     </div>
@@ -30,6 +30,10 @@ export default {
 
 .link {
   font-size: 1.4vw;
+}
+
+span {
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1024px) {

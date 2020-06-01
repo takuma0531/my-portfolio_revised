@@ -275,14 +275,14 @@ span {
   }
 
   .l-btn {
-    position: fixed;
+    position: absolute;
     left: 30px;
     margin-top: 36vw;
     margin-left: 1vw;
   }
 
   .r-btn {
-    position: fixed;
+    position: absolute;
     right: 30px;
     margin-top: 36vw;
     margin-right: 1vw;
