@@ -4,7 +4,7 @@
       <h1>Contact</h1>
       <div class="content">
         <div class="link-field">
-          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+          <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
         </div>
       </div>
     </div>

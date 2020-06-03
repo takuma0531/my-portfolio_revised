@@ -19,7 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .body {
-  backdrop-filter: blur(10px) brightness(70%);
   padding-top: 16vh;
 
   h1 {

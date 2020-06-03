@@ -77,6 +77,8 @@ export default {
       height: 100px;
 
       .menu-field {
+        margin-top: 8px;
+
         .router {
           svg {
             font-size: 18px;
