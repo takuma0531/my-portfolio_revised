@@ -4,7 +4,7 @@
       <h1>Projects</h1>
       <div class="content">
         <div class="project" v-for="project in projects" :key="project.id">
-          <img :src="`${publicPath}images/${project.img_src}`" alt="img">
+          <img :src="`/images/${project.img_src}`" alt="img">
 
           <div class="app-content">
             <p class="app-title">
@@ -33,7 +33,7 @@
     <div class="body mobile">
       <div class="content-for-mobile">
         <div class="project">
-          <img :src="`${publicPath}images/${project.img_src}`" alt="img">
+          <img :src="`/images/${project.img_src}`" alt="img">
 
           <div class="app-content">
             <p class="app-title">
@@ -77,7 +77,6 @@ export default {
   data() {
     return {
       projects,
-      publicPath: process.env.BASE_URL,
       // the following code is for mobile device
       currentId: 1,
       dot: 'dot',
