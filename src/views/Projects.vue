@@ -1,312 +1,300 @@
 <template>
   <div class="projects">
-    <div class="body">
-      <h4>Projects</h4>
+    <div class="body laptop">
+      <h1>Projects</h1>
       <div class="content">
-
-        <div class="button l-btn" v-on:click="clickLeft">&#x0003C;</div>
-
-        <div class="button r-btn" v-on:click="clickRight">&#x0003E;</div>
-
-        <div class="project">
-          <img src="../assets/vuejs.jpg" alt="">
+        <div class="project" v-for="project in projects" :key="project.id">
+          <img :src="`${publicPath}images/${project.img_src}`" alt="img">
 
           <div class="app-content">
-            <p class="app-title">My Portfolio</p>
-            <p class="app-description">This application is built with Vue.js</p>
-          </div>
-
-          <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/my-portfolio_revised"><span>code</span><i class="fas fa-code"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="../assets/chart_board.jpg" alt="">
-
-          <div class="app-content">
-            <p class="app-title">Chart Board</p>
+            <p class="app-title">
+              {{ project.title }}
+            </p>
             <p class="app-description">
-              This application is built with Vue.js and
-              Google Firebase. It provides mainly BitCoin/
-              USD rate and confirmed COVID-19 cases in U.S.
-              for last 45 days.
+              {{ project.description  }}
             </p>
           </div>
 
           <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/cryptocurrency-board-app"><span>code</span><i class="fas fa-code"></i></a>
-
-            <a class="app link" href="https://chart-board-27116.firebaseapp.com/"><span>app</span><i class="fas fa-digital-tachograph"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="../assets/simple_board.jpg" alt="">
-
-          <div class="app-content">
-            <p class="app-title">Simple Board</p>
-            <p class="app-description">
-              This application is built with Vue.js. It provides its users with chat function.
-            </p>
-          </div>
-
-          <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/simple-board-app-frontend"><span>code</span><i class="fas fa-code"></i></a>
-
-            <a class="app link" href="https://simple-board-app-frontend.herokuapp.com/board-app"><span>app</span><i class="fas fa-digital-tachograph"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="../assets/flask.jpg" alt="">
-
-          <div class="app-content">
-            <p class="app-title">Simple Board API</p>
-            <p class="app-description">
-              This is Simple Board API built with Flask. It provides chatting CRUD functions.
-            </p>
-          </div>
-
-          <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/simple-board-app-backend"><span>code</span><i class="fas fa-code"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="../assets/studentmanagamentsystemconsoleapp.jpg" alt="">
-
-          <div class="app-content">
-            <p class="app-title">Student Management System</p>
-            <p class="app-description">
-              This is a console application built with C# and .NET, with using Microst SQL Server.
-            </p>
-          </div>
-
-          <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/Student_Module_Management_System"><span>code</span><i class="fas fa-code"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="../assets/memorygame.jpg" alt="">
-
-          <div class="app-content">
-            <p class="app-title">Memory Game</p>
-            <p class="app-description">
-              This application is built with Vue.js and Vuex.
-              The users can play the game intuitively.
-            </p>
-          </div>
-
-          <div class="link-field">
-            <a class="code link" href="https://github.com/takuma0531/memory-game-vue.js"><span>code</span><i class="fas fa-code"></i></a>
-
-            <a class="app link" href="https://memory-game-vue.herokuapp.com/"><span>app</span><i class="fas fa-digital-tachograph"></i></a>
+            <a v-if="project.code_link" :href="`${project.code_link}`" class="link" target="_blank">
+              <span>code</span>
+              <i class="fas fa-code"></i>
+            </a>
+            <a v-if="project.app_link" :href="project.app_link" class="link" target="_blank">
+              <span>app</span>
+              <i class="fas fa-digital-tachograph"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- The following code is rendered on only mobile device  -->
+    <div class="body mobile">
+      <div class="content-for-mobile">
+        <div class="project">
+          <img :src="`${publicPath}images/${project.img_src}`" alt="img">
+
+          <div class="app-content">
+            <p class="app-title">
+              {{ project.title }}
+            </p>
+            <p class="app-description">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <div class="link-field">
+            <a v-if="project.code_link" :href="`${project.code_link}`" class="link" target="_blank">
+              <span>code</span>
+              <i class="fas fa-code"></i>
+            </a>
+            <a v-if="project.app_link" :href="project.app_link" class="link" target="_blank">
+              <span>app</span>
+              <i class="fas fa-digital-tachograph"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots">
+        <span
+        v-for="project in projects"
+        :key="project.id"
+        :class="[dot, (project.id === currentId) ? selected: '']"
+        v-on:click="selectProject(project.id)" />
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
+import projects from '../assets/projects/projects.json';
+
 export default {
   name: 'Projects',
   data() {
     return {
-      img: 'simple_board.jpg',
+      projects,
+      publicPath: process.env.BASE_URL,
+      // the following code is for mobile device
+      currentId: 1,
+      dot: 'dot',
+      selected: 'selected',
     };
   },
-
-  methods: {
-    clickLeft() {
-      document.querySelector('.content').scrollLeft -= 212;
+  computed: {
+    project() {
+      return this.projects.find((project) => project.id === this.currentId);
     },
-    clickRight() {
-      document.querySelector('.content').scrollLeft += 212;
+  },
+  methods: {
+    selectProject(id) {
+      this.currentId = id;
     },
   },
 };
 </script>
 
-<style scoped>
-.content {
-  padding: 20px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+<style lang="scss" scoped>
+.projects {
+  padding-bottom: 13vh;
 
-.project {
-  width: 20vw;
-  margin: 20px auto;
-  border-style: outset;
-  border-width: 1px;
-  border-color: #ffffff1f;
-}
+  .laptop {
+    h1 {
+      font-size: 28px;
+      text-align: center;
+    }
 
-.project > img {
-  width: 20vw;
-  height: 22vh;
-}
+    .content {
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
 
-.app-content {
-  background: rgba(241, 241, 241, 0.047);
-}
+      .button {
+        display: none;
+      }
 
-.app-title {
-  margin: 0px 0 2px 0;
-  font-weight: bold;
-  white-space: nowrap;
-  height: 3vh;
-  width: 100%;
-  font-size: 1.2vw;
-}
+      .project {
+        width: 300px;
+        margin: 20px auto;
+        border-style: outset;
+        border-width: 1px;
+        border-color: #ffffff1f;
 
-.app-description {
-  margin: 0;
-  font-size: 1vw;
-  height: 11vh;
-  padding-bottom: 5px;
-  border-bottom: #ffffff1f solid 1px;
-}
+        img {
+          width: 100%;
+          height: 200px;
+        }
 
-.link-field {
-  display: flex;
-}
+        .app-content {
+          background: rgba(241, 241, 241, 0.047);
 
-.link {
-  border-right:#ffffff1f solid 1px;
-  background: #33262640;
-  font-size: 1.4vw;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
-}
+          .app-title {
+            margin: 0px 0 2px 0;
+            font-weight: bold;
+            white-space: nowrap;
+            height: 30px;
+            width: 100%;
+            font-size: 20px;
+          }
 
-.link:hover {
-  background: #3326262e;
-  color: #eae3e39f;
-}
+          .app-description {
+            margin: 0;
+            font-size: 17px;
+            height: 120px;
+            border-bottom: #ffffff1f solid 1px;
+          }
+        }
 
-span {
-  margin-right: 5px;
-}
+        .link-field {
+          display: flex;
 
-.button {
-  display: none;
+          .link {
+            border-right:#ffffff1f solid 1px;
+            background: #33262640;
+            font-size: 23px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+
+            span {
+              margin-right: 5px;
+            }
+          }
+
+          .link:hover {
+            background: #3326262e;
+            color: #eae3e39f;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-  .content {
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: 15vh;
-  }
-
-  .project {
-    width: 33vw;
-  }
-
-  .app-title {
-    font-size: 2.3vw;
-  }
-
-  .app-description {
-    font-size: 2vw;
-  }
-
-  .link {
-    font-size: 2.5vw;
-  }
-
-  .project > img {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 414px) {
   .projects {
-    padding-bottom: 8.1vh;
-  }
+    .laptop {
+      h1 {
 
-  .body {
-    margin: 10vh auto;
-  }
+      }
 
-  .content {
-    display: flex;
-    margin: 0 24.5vw;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+      .content {
+        grid-template-columns: 1fr 1fr;
 
-  h4 {
-    font-size: 6vw;
-  }
-
-  .project {
-    width: 210px;
-  }
-
-  .project > img {
-    width: 210px;
-    height: 140px;
-  }
-
-  .app-title {
-    font-size: 3.2vw;
-  }
-
-  .app-description {
-    font-size: 3vw;
-    height: 20vw;
-  }
-
-  .link {
-    font-size: 4vw;
-  }
-
-  .button {
-    display: block;
-    color: white;
-    font-size: 5vw;
-    padding: 7px;
-    background: #00000047;
-  }
-
-  .l-btn {
-    position: absolute;
-    left: 30px;
-    margin-top: 36vw;
-    margin-left: 1vw;
-  }
-
-  .r-btn {
-    position: absolute;
-    right: 30px;
-    margin-top: 36vw;
-    margin-right: 1vw;
+        .project {
+        }
+      }
+    }
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 730px) {
   .projects {
-    padding-bottom: 10.7vh;
-  }
+    .laptop {
+      .content {
+        display: none;
+      }
+    }
 
-  .content {
-    margin: 5vh 21.71vw;
+    .mobile {
+      display: block;
+
+      .content-for-mobile {
+
+        .project {
+          width: 280px;
+          margin: 20px auto;
+          border-style: outset;
+          border-width: 1px;
+          border-color: #ffffff1f;
+
+          img {
+            width: 100%;
+            height: 180px;
+          }
+
+          .app-content {
+            background: rgba(241, 241, 241, 0.047);
+
+            .app-title {
+              margin: 0;
+              font-weight: bold;
+              font-size: 16px;
+              height: 30px;
+            }
+
+            .app-description {
+              margin: 0;
+              font-size: 14px;
+              height: 100px;
+              border-bottom: #ffffff1f solid 1px;
+            }
+          }
+
+          .link-field {
+            display: flex;
+
+            .link {
+              border-right:#ffffff1f solid 1px;
+              background: #33262640;
+              font-size: 19px;
+              width: 100%;
+              text-align: center;
+
+              span {
+                margin-right: 5px;
+              }
+            }
+
+            .link:active {
+              background: #3326262e;
+              color: #eae3e39f;
+            }
+          }
+
+        }
+      }
+
+      .dots {
+        display: flex;
+        width: 70%;
+        margin: auto;
+
+        .dot {
+          margin: auto;
+          height: 20px;
+          width: 20px;
+          background-color: #000000c7;
+          border-radius: 50%;
+        }
+
+        .selected {
+          background-color: #757575c2;
+        }
+      }
+    }
   }
 }
 
-@media (max-width: 375px) and (max-height: 700px) {
+@media screen and (max-width: 375px) and (max-height: 667px) {
   .projects {
-    padding-bottom: 4vh;
-  }
-
-  .content {
-    margin: 0 20.6vw;
+    .mobile {
+      .content-for-mobile {
+        .project {
+          width: 250px;
+          img {
+            height: 150px;
+          }
+        }
+      }
+    }
   }
 }
-
 </style>

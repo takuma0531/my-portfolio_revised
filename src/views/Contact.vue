@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="body">
-      <h4>Contact</h4>
+      <h1>Contact</h1>
       <div class="content">
         <div class="link-field">
           <a class="link" href="https://www.linkedin.com/in/takuma-masaki-linked-in/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
@@ -17,66 +17,24 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .contact {
-  padding-bottom: 49.6vh;
-}
-
-.link-field {
-  width: 100%;
-  text-align: center;
-  margin-top: 5vw;
-}
-
-.link {
-  font-size: 1.4vw;
-}
-
-span {
-  margin-left: 5px;
-}
-
-@media screen and (max-width: 1024px) {
-  .contact {
-    padding-bottom: 61.2vh;
+  h1 {
+    font-size: 28px;
+    text-align: center;
   }
 
   .link-field {
-    margin-top: 25vw;
-  }
+    text-align: center;
+    margin-top: 100px;
 
-  .link {
-    font-size: 3vw;
-  }
-}
+    .link {
+      font-size: 20px;
+    }
 
-@media screen and (max-width: 414px) {
-  .contact {
-    padding-bottom: 68.2vh;
-  }
-
-  .body {
-    margin-top: 10vh;
-  }
-
-  h4 {
-    font-size: 6vw;
-  }
-
-  .link {
-    font-size: 4vw;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .contact {
-    padding-bottom: 73.8vh;
-  }
-}
-
-@media (max-width: 375px) and (max-height: 700px) {
-  .contact {
-    padding-bottom: 68.2vh;
+    span {
+      margin-left: 5px;
+    }
   }
 }
 </style>

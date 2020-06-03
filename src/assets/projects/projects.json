@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "img_src": "vuejs.jpg",
+    "title": "My Portfolio",
+    "description": "This application is built with Vue.js",
+    "code_link": "https://github.com/takuma0531/my-portfolio_revised/",
+    "app_link": ""
+  },
+  {
+    "id": 2,
+    "img_src": "chart_board.jpg",
+    "title": "Chart Board",
+    "description": " This application is built with Vue.js and Google Firebase. It provides mainly BitCoin/USD rate and confirmed COVID-19 cases in U.S. for last 45 days.",
+    "code_link": "https://github.com/takuma0531/cryptocurrency-board-app/",
+    "app_link": "https://chart-board-27116.firebaseapp.com/"
+  },
+  {
+    "id": 3,
+    "img_src": "simple_board.jpg",
+    "title": "Simple Board",
+    "description": "This application is built with Vue.js. It provides its users with chat function.",
+    "code_link": "https://github.com/takuma0531/simple-board-app-frontend",
+    "app_link": "https://simple-board-app-frontend.herokuapp.com/board-app/"
+  },
+  {
+    "id": 4,
+    "img_src": "flask.jpg",
+    "title": "Simple Board API",
+    "description": "This is Simple Board API built with Flask. It provides chatting CRUD functions.",
+    "code_link": "https://github.com/takuma0531/simple-board-app-backend/",
+    "app_link": ""
+  },
+  {
+    "id": 5,
+    "img_src": "studentmanagamentsystemconsoleapp.jpg",
+    "title": "Student Management System",
+    "description": "This is a console application built with C# and .NET, with using Microst SQL Server.",
+    "code_link": "https://github.com/takuma0531/Student_Module_Management_System/",
+    "app_link": ""
+  },
+  {
+    "id": 6,
+    "img_src": "memorygame.jpg",
+    "title": "Memory Game",
+    "description": "This application is built with Vue.js and Vuex. The users can play the game intuitively.",
+    "code_link": "https://github.com/takuma0531/memory-game-vue.js",
+    "app_link": "https://memory-game-vue.herokuapp.com/"
+  },
+  {
+    "id": 7,
+    "img_src": "nuxtjs.jpg",
+    "title": "My Blog",
+    "description": "This blog is built with Nuxt.js",
+    "code_link": "https://github.com/takuma0531/my-website-nuxt",
+    "app_link": "https://takumasakix.com/"
+  }
+]

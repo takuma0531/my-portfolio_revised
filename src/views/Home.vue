@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <div class="body">
-      <div class="header">
-        <h4 class="greeting">Thank you for visiting my website!</h4>
-        <router-link to="/cv">
-          <img class="my-img" src="../assets/my-image.jpg" alt="my-image">
-        </router-link>
-      </div>
+        <h1>Thank you for visiting my website!</h1>
+        <div class="img-field">
+          <router-link to="/cv">
+            <img class="my-img" src="../assets/my-image.jpg" alt="my-image">
+          </router-link>
+        </div>
     </div>
   </div>
 </template>
@@ -17,69 +17,48 @@ export default {
 };
 </script>
 
-<style scoped>
-.header {
+<style lang="scss" scoped>
+.body {
   backdrop-filter: blur(10px) brightness(70%);
   padding-top: 16vh;
-  padding-bottom: 28vh;
-}
 
-.greeting {
-  margin: 0 0 40px 0;
-  text-align: center;
-}
-
-.my-img {
-  border-radius: 50%;
-  height: 10vw;
-  margin-left: 46%;
-}
-
-.my-img:hover {
-  filter: brightness(80%);
-}
-
-@media screen and (max-width: 1024px) {
-  .header {
-    padding-top: 6vh;
-    padding-bottom: 47vh;
+  h1 {
+    margin: 0 0 40px 0;;
+    text-align: center;
   }
 
-  .greeting {
-    margin-top: 20vw;
-    margin-bottom: 10vw;
-  }
+  .img-field {
+    text-align: center;
+    .my-img {
+      border-radius: 50%;
+      height: 150px;
+    }
 
-  .my-img {
-    height: 15vw;
+    .my-img:hover {
+      filter: brightness(80%);
+    }
   }
 }
 
-@media screen and (max-width: 414px) {
-  .header {
-    padding-bottom: 50vh;
-  }
-
-  .greeting {
-    margin-bottom: 15vw;
-    font-size: 6vw;
-  }
-
-  .my-img {
-    height: 25vw;
-    margin-left: 40%;
+@media screen and (max-width: 1200px) {
+  .body {
+    h1 {
+      font-size: 28px;
+    }
   }
 }
 
-@media screen and (max-width: 375px) {
-  .header {
-    padding-bottom: 57.7vh;
-  }
-}
+@media screen and (max-width: 500px) {
+  .body {
+    h1 {
+      font-size: 22px;
+    }
 
-@media (max-width: 375px) and (max-height: 700px) {
-  .header {
-    padding-bottom: 50vh;
+    .img-field {
+      .my-img {
+        height: 130px;
+      }
+    }
   }
 }
 </style>

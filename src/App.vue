@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 body {
   margin: 0;
 }
@@ -42,96 +42,29 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
 .view {
   backdrop-filter: blur(15px) brightness(70%);
   -webkit-backdrop-filter: blur(15px) brightness(70%);
-  padding-top: 1%;
-}
+  min-height: 98.3vh;
+  padding-top: 70px;
 
-.body {
-  width: 1200px;
-  margin: auto;
-}
-
-h3 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 1%;
-  font-size: 1.5vw;
-}
-
-h4 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 1%;
-  font-size: 2vw;
-}
-
-h5 {
-  font-size: 1.7vw;
-}
-
-p {
-  font-size: 1.3vw;
-}
-
-@media screen and (max-width: 1200px) {
   .body {
     width: 100%;
+    max-width: 1200px;
+    margin: auto;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  h3 {
-    font-size: 3vw;
-  }
-
-  h4 {
-    font-size: 4vw;
-  }
-
-  h5 {
-    font-size: 2.5vw;
-  }
-
-  p {
-    font-size: 2vw;
-  }
-
-  .under-bar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  #app {
-    position: relative;
-  }
-
-  .top-bar {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-  }
-
+@media screen and (max-width: 1000px) {
   .view {
-    padding-top: 10%;
-  }
+    padding-bottom: 10vh;
 
-  h3, h4 {
-    font-size: 4vw;
-  }
-
-  h5 {
-    font-size: 4.5vw;
-  }
-
-  p {
-    font-size: 4vw;
+    .body {
+      width: 100%;
+    }
   }
 }
 

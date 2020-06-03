@@ -46,115 +46,114 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .top-bar {
   background-color: #000000c7;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  margin: 0;
-}
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
 
-.body {
-  margin: auto;
-  display: flex;
-  position: relative;
-  padding: 2vh 0;
-}
-
-.menu > .router {
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 2vw;
-}
-
-.img-field {
-  position: absolute;
-  right: 0;
-  bottom: 0.5vh;
-}
-
-.my-img {
-  border-radius: 50%;
-  height: 5.5vh;
-}
-
-.bar-icon {
-  display: none;
-}
-
-@media screen and (max-width: 1024px) {
   .body {
-    padding: 2vh 0;
-  }
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    padding: 15px 0;
 
-  .menu > .router {
-    font-size: 4vw;
-  }
+    .menu {
+      .router {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
 
-  .img-field {
-    right: 1vw;
-    bottom: 1vh;
+    .img-field {
+      position: absolute;
+      right: 0;
+
+      .my-img {
+        border-radius: 50%;
+        height: 40px;
+      }
+    }
+
+    .bar-icon {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .top-bar {
+    .body {
+      .img-field {
+        right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .top-bar {
+    height: 55px;
+
+    .body {
+      .menu {
+        display: none;
+        margin-top: 40px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+
+        .router {
+          padding: 6px 10px;
+          display: block;
+          background: #000000c7;
+        }
+
+        .router:hover {
+          background: #5f5f5f;
+        }
+      }
+
+      .img-field {
+        left: 1px;
+        top: 4px;
+
+        .my-img {
+          height: 50px;
+        }
+      }
+
+      .bar-icon {
+        display: inline-block;
+        position: absolute;
+        right: 7px;
+        top: 8px;
+
+        svg {
+          font-size: 40px;
+        }
+      }
+
+      .x {
+        display: none;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 414px) {
   .top-bar {
-    height: 15vw;
-  }
-
-  .menu {
-    display: none;
-    margin-top: 6.4vh;
     position: absolute;
     z-index: 1;
     width: 100%;
-  }
-
-  .menu > .router {
-    font-size: 6vw;
-    padding: 8px 10px;
-    display: block;
-    background: #000000c7;
-  }
-
-  .menu > .router:hover {
-    background: #5f5f5f;
-  }
-
-  .img-field {
-    left: 1%;
-    top: 5%;
-  }
-
-  .my-img {
-    height: 14vw;
-  }
-
-  .bar-icon {
-    display: inline-block;
-    position: absolute;
-    right: 3%;
-    top: 15%;
-  }
-
-  .x {
-    display: none;
-  }
-
-  svg {
-    font-size: 11vw;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .menu {
-    margin-top: 4.9vh;
-  }
-}
-
-@media (max-width: 375px) and (max-height: 700px) {
-  .menu {
-    margin-top: 6.4vh;
   }
 }
 </style>
